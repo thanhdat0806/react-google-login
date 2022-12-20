@@ -1,7 +1,9 @@
 import './App.css';
+import { useState} from 'react';
+import Content from './hooks/Content.js';
+import React from "react";
 import GoogleLogin from 'react-google-login';
-import { useState } from 'react';
-import Content from './Content'
+
 
 function App() {
   const [show, setShow]=useState(false)
@@ -76,15 +78,20 @@ function App() {
                 </ul>
             </li>
             <li><a href="#" title="Liện hệ">Liên hệ</a></li>
-            <li><button onClick={()=> setShow(!show)}>Toggle</button>
-                
-                </li>
-        
+            <li><button onClick={()=> setShow(!show)}>Toggle</button>               
+                </li>     
         </ul>
     </nav>
       <header className="App-header">
       {show && <Content/>}
         <h1>React Google Login App</h1>
+        <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}>
         <div>
           {loginData ? (
             <div>
@@ -101,6 +108,7 @@ function App() {
             ></GoogleLogin>
           )}
         </div>
+    </div>
       </header>
     </div>
   );

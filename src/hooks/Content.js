@@ -4,7 +4,6 @@ import { useEffect } from "react";
 const tabs = ['posts','comments', 'albums','photos','todos','users']
 
 function Content() {
-    const [title,setTitle] = useState('')
     const [posts, setPosts]= useState([])
     const [type, setType] = useState('posts')
     const [avatar, setAvatar] =useState()
